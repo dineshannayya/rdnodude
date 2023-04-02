@@ -46,7 +46,7 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 #include "config.h"
 #include "term.h"

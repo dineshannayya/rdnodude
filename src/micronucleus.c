@@ -45,7 +45,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <time.h>
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "micronucleus.h"
 #include "usbdevs.h"
 

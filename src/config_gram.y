@@ -27,7 +27,7 @@
 #include <math.h>
 #include <errno.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 #include "config.h"
 #include "developer_opts.h"

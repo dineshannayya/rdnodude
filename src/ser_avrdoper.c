@@ -33,7 +33,7 @@
 #include <stdlib.h>
 #include <hidapi/hidapi.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 /* ------------------------------------------------------------------------ */

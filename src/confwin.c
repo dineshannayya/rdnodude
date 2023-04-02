@@ -18,7 +18,7 @@
 
 
 #include "ac_cfg.h"
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #if defined(WIN32)

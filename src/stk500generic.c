@@ -31,7 +31,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "stk500generic.h"

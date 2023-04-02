@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "arduino.h"

@@ -61,7 +61,7 @@
 #include <stdint.h>
 #include <math.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "bitbang.h"

@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <unistd.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "usbasp.h"

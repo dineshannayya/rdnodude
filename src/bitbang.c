@@ -36,7 +36,7 @@
 #include <sys/time.h>
 #endif
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "par.h"

@@ -27,7 +27,7 @@
 #include <limits.h>
 #include <unistd.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "dfu.h"

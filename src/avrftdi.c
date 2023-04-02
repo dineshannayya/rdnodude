@@ -33,7 +33,7 @@
 #include <stdint.h>
 #include <stdarg.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "avrftdi.h"

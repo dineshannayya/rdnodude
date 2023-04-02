@@ -45,7 +45,7 @@ reg = register as defined in an enum in ppi.h. This must be converted
 #include <sys/time.h>
 #include <windows.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "ppi.h"

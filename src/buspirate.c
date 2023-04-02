@@ -42,7 +42,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "bitbang.h"

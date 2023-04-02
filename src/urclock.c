@@ -213,7 +213,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "urclock.h"

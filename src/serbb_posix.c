@@ -36,7 +36,7 @@
 #include <sys/ioctl.h>
 #include <termios.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "bitbang.h"

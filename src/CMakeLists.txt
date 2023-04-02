@@ -111,14 +111,14 @@ endif()
 # =====================================
 
 configure_file(cmake_config.h.in ac_cfg.h)
-configure_file(avrdude.spec.in avrdude.spec)
+configure_file(riscduino_dude.spec.in riscduino_dude.spec)
 if(WIN32)
     configure_file(windows.rc.in windows.rc)
 endif()
 
 add_custom_command(
-    OUTPUT avrdude.conf
-    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/avrdude.conf.in" avrdude.conf.in
+    OUTPUT riscduino_dude.conf
+    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/riscduino_dude.conf.in" riscduino_dude.conf.in
     COMMAND ${CMAKE_COMMAND}
         -D HAVE_PARPORT=$<BOOL:${HAVE_PARPORT}>
         -D HAVE_LINUXSPI=$<BOOL:${HAVE_LINUXSPI}>
@@ -127,11 +127,11 @@ add_custom_command(
         -D DEFAULT_SER_PORT=${DEFAULT_SER_PORT}
         -D DEFAULT_LINUXGPIO_PORT=${DEFAULT_LINUXGPIO_PORT}
         -P "${CMAKE_CURRENT_SOURCE_DIR}/configure.cmake"
-    DEPENDS avrdude.conf.in
+    DEPENDS riscduino_dude.conf.in
     VERBATIM
     )
 
-add_custom_target(conf ALL DEPENDS avrdude.conf)
+add_custom_target(conf ALL DEPENDS riscduino_dude.conf)
 
 # =====================================
 # Project
@@ -145,7 +145,7 @@ add_library(libavrdude
     avr910.c
     avr910.h
     avrcache.c
-    avrdude.h
+    riscduino_dude.h
     avrftdi.c
     avrftdi.h
     avrftdi_private.h
@@ -282,7 +282,7 @@ target_link_libraries(libavrdude
     ${EXTRA_WINDOWS_LIBRARIES}
     )
 
-add_executable(avrdude
+add_executable(riscduino_dude
     main.c
     term.c
     term.h
@@ -296,19 +296,19 @@ add_executable(avrdude
     "${EXTRA_WINDOWS_RESOURCES}"
     )
 
-target_link_libraries(avrdude PUBLIC libavrdude)
+target_link_libraries(riscduino_dude PUBLIC libavrdude)
 
 # =====================================
 # Install
 # =====================================
 
-install(TARGETS avrdude DESTINATION bin)
+install(TARGETS riscduino_dude DESTINATION bin)
 install(TARGETS libavrdude
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
     PUBLIC_HEADER DESTINATION include COMPONENT dev
     )
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/avrdude.conf" TYPE SYSCONF)
-install(FILES "avrdude.1"
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/riscduino_dude.conf" TYPE SYSCONF)
+install(FILES "riscduino_dude.1"
 	DESTINATION "${CMAKE_INSTALL_MANDIR}/man1"
 	)

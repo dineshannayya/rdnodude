@@ -40,7 +40,7 @@
 # include "solaris_ecpp.h"
 #endif
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "ppi.h"

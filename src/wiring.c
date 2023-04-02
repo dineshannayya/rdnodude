@@ -45,7 +45,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "avrdude.h"
+#include "riscduino_dude.h"
 #include "libavrdude.h"
 
 #include "stk500v2_private.h"
