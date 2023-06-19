@@ -2697,6 +2697,17 @@ programmer
     baudrate               = 115200;
     hvupdi_support         = 1;
 ;
+#------------------------------------------------------------
+# riscduino
+#------------------------------------------------------------
+
+#programmer
+#    id                     = "riscduino";
+#    desc                   = "Riscduino Soc";
+#    type                   = "riscduino";
+#    prog_modes             = PM_ISP;
+#    connection_type        = serial;
+#;
 
 #
 # PART DEFINITIONS
