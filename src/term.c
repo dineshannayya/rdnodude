@@ -50,7 +50,7 @@
 #endif
 
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "term.h"
 
 struct command {

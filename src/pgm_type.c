@@ -25,10 +25,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 
 #include "arduino.h"
+#include "riscduino.h"
 #include "avr910.h"
 #include "avrftdi.h"
 #include "buspirate.h"
@@ -109,6 +110,7 @@ const PROGRAMMER_TYPE programmers_types[] = { // Name(s) the programmers call th
   {"usbtiny", usbtiny_initpgm, usbtiny_desc}, // "USBtiny" or "usbtiny"
   {"wiring", wiring_initpgm, wiring_desc}, // "Wiring"
   {"xbee", xbee_initpgm, xbee_desc}, // "XBee"
+  {"riscduino", riscduino_initpgm, riscduino_desc}, // "Riscduino"
 };
 
 const PROGRAMMER_TYPE *locate_programmer_type(const char *id) {

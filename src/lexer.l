@@ -29,7 +29,7 @@
 #include <sys/stat.h>
 
 #include "ac_cfg.h"
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 #include "config.h"
 
@@ -242,7 +242,7 @@ writepage        { yylval=new_token(K_WRITEPAGE); ccap(); return K_WRITEPAGE; }
 
 c: { yyerror("possible old-style config file entry\n"
              "  Update your config file (see " CONFIG_DIR 
-               "/riscduino_dude.conf.sample for a sample)");
+               "/rdnodude.conf.sample for a sample)");
      return YYERRCODE; }
 
 . { return YYERRCODE; }

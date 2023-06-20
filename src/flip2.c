@@ -28,7 +28,7 @@
 #include <limits.h>
 #include <unistd.h>
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 
 #include "flip2.h"

@@ -35,10 +35,10 @@
 #include "libavrdude.h"
 #include "stk500_private.h"
 #include "stk500.h"
-#include "arduino.h"
+#include "riscduino.h"
 
-/* read signature bytes - arduino version */
-static int arduino_read_sig_bytes(const PROGRAMMER *pgm, const AVRPART *p, const AVRMEM *m) {
+/* read signature bytes - riscduino version */
+static int riscduino_read_sig_bytes(const PROGRAMMER *pgm, const AVRPART *p, const AVRMEM *m) {
   unsigned char buf[32];
 
   /* Signature byte reads are always 3 bytes. */
@@ -76,7 +76,7 @@ static int arduino_read_sig_bytes(const PROGRAMMER *pgm, const AVRPART *p, const
   return 3;
 }
 
-static int arduino_open(PROGRAMMER *pgm, const char *port) {
+static int riscduino_open(PROGRAMMER *pgm, const char *port) {
   union pinfo pinfo;
   strcpy(pgm->port, port);
   pinfo.serialinfo.baud = pgm->baudrate? pgm->baudrate: 115200;
@@ -92,7 +92,7 @@ static int arduino_open(PROGRAMMER *pgm, const char *port) {
    * Long wait needed for optiboot: otherwise the second of two bootloader
    * calls in quick succession fails:
    *
-   * avrdude -c arduino -qqp m328p -U x.hex; avrdude -c arduino -qqp m328p -U x.hex
+   * rdnodude -c riscduino -qqp m328p -U x.hex; rdnodude -c riscduino -qqp m328p -U x.hex
    */
   usleep(250 * 1000);
   // Pull the RTS/DTR line low to reset AVR
@@ -113,25 +113,25 @@ static int arduino_open(PROGRAMMER *pgm, const char *port) {
   return 0;
 }
 
-static void arduino_close(PROGRAMMER * pgm)
+static void riscduino_close(PROGRAMMER * pgm)
 {
   serial_close(&pgm->fd);
   pgm->fd.ifd = -1;
 }
 
-const char arduino_desc[] = "Arduino programmer";
+const char riscduino_desc[] = "Riscduino programmer";
 
-void arduino_initpgm(PROGRAMMER *pgm) {
+void riscduino_initpgm(PROGRAMMER *pgm) {
   /* This is mostly a STK500; just the signature is read
      differently than on real STK500v1 
      and the DTR signal is set when opening the serial port
      for the Auto-Reset feature */
   stk500_initpgm(pgm);
 
-  strcpy(pgm->type, "Arduino");
-  pgm->read_sig_bytes = arduino_read_sig_bytes;
-  pgm->open = arduino_open;
-  pgm->close = arduino_close;
+  strcpy(pgm->type, "Riscduino");
+  pgm->read_sig_bytes = riscduino_read_sig_bytes;
+  pgm->open = riscduino_open;
+  pgm->close = riscduino_close;
 
-  disable_trailing_ff_removal(); /* so that arduino bootloader can ignore chip erase */
+  disable_trailing_ff_removal(); /* so that riscduino bootloader can ignore chip erase */
 }

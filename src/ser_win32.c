@@ -33,7 +33,7 @@
 #include <ctype.h>   /* for isprint */
 #include <errno.h>   /* ENOTTY */
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 
 long serial_recv_timeout = 5000; /* ms */

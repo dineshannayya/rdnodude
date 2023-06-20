@@ -31,8 +31,8 @@
 #
 
 EXTRA_DIST   = \
-	riscduino_dude.1 \
-	riscduino_dude.spec \
+	rdnodude.1 \
+	rdnodude.spec \
 	bootstrap
 
 CLEANFILES = \
@@ -65,7 +65,7 @@ libavrdude_la_CFLAGS  = $(libavrdude_a_CFLAGS)
 
 avrdude_LDADD  = $(top_builddir)/$(noinst_LIBRARIES) @LIBUSB_1_0@ @LIBHIDAPI@ @LIBUSB@ @LIBFTDI1@ @LIBFTDI@ @LIBHID@ @LIBELF@ @LIBPTHREAD@ -lm
 
-bin_PROGRAMS = riscduino_dude
+bin_PROGRAMS = rdnodude
 
 noinst_LIBRARIES = libavrdude.a
 lib_LTLIBRARIES = libavrdude.la
@@ -90,11 +90,13 @@ libavrdude_a_SOURCES = \
 	lexer.l \
 	arduino.h \
 	arduino.c \
+	riscduino.h \
+	riscduino.c \
 	avr.c \
 	avr910.c \
 	avr910.h \
 	avrcache.c \
-	riscduino_dude.h \
+	rdnodude.h \
 	avrftdi.c \
 	avrftdi.h \
 	avrftdi_private.h \
@@ -212,21 +214,21 @@ avrdude_SOURCES = \
 	term.c \
 	term.h
 
-man_MANS = riscduino_dude.1
+man_MANS = rdnodude.1
 
-sysconf_DATA = riscduino_dude.conf
+sysconf_DATA = rdnodude.conf
 
-install-exec-local: backup-riscduino-dude-conf
+install-exec-local: backup-rdnodude-conf
 
 distclean-local:
-	rm -f riscduino_dude.conf
+	rm -f rdnodude.conf
 
 # This will get run before the config file is installed.
-backup-riscduino-dude-conf:
-	@echo "Backing up riscduino_dude.conf in ${DESTDIR}${sysconfdir}"
-	@if test -e ${DESTDIR}${sysconfdir}/riscduino_dude.conf; then \
-		cp -pR ${DESTDIR}${sysconfdir}/riscduino_dude.conf \
-			${DESTDIR}${sysconfdir}/riscduino_dude.conf.bak; \
+backup-rdnodude-conf:
+	@echo "Backing up rdnodude.conf in ${DESTDIR}${sysconfdir}"
+	@if test -e ${DESTDIR}${sysconfdir}/rdnodude.conf; then \
+		cp -pR ${DESTDIR}${sysconfdir}/rdnodude.conf \
+			${DESTDIR}${sysconfdir}/rdnodude.conf.bak; \
 	fi
 
 ACLOCAL_AMFLAGS = -I m4

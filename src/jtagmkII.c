@@ -42,7 +42,7 @@
 #include <sys/time.h>
 #include <time.h>
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 
 #include "crc16.h"

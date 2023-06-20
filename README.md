@@ -41,7 +41,7 @@ For instance, to program an **Riscduino Score** connected to the serial port **C
 you would run the following command:
 
 ```console
-rdnodude -c riscduino_score -P COM1 -b 115200 -p score -D -U flash:w:objs/blink.hex:i
+rdnodude -c riscduino -P COM1 -b 115200 -p score -D -U flash:w:objs/blink.hex:i
 ```
 
 ## Reference

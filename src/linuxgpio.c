@@ -34,7 +34,7 @@
 #include <gpiod.h>
 #endif
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 
 #include "bitbang.h"

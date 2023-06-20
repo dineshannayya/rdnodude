@@ -2701,13 +2701,14 @@ programmer
 # riscduino
 #------------------------------------------------------------
 
-#programmer
-#    id                     = "riscduino";
-#    desc                   = "Riscduino Soc";
-#    type                   = "riscduino";
-#    prog_modes             = PM_ISP;
-#    connection_type        = serial;
-#;
+programmer
+    id                     = "riscduino";
+    desc                   = "Riscduino Soc";
+    type                   = "riscduino";
+    prog_modes             = PM_ISP;
+    connection_type        = serial;
+    baudrate               = 115200;
+;
 
 #
 # PART DEFINITIONS

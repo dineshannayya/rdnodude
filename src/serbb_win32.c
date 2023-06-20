@@ -23,7 +23,7 @@
  * Win32 serial bitbanging interface for avrdude.
  */
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 
 #if defined(WIN32)
 
@@ -34,7 +34,7 @@
 #include <windows.h>
 #include <stdio.h>
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 
 #include "bitbang.h"

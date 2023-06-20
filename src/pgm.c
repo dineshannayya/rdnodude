@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 
 static void pgm_default(void);

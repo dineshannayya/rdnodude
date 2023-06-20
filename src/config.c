@@ -28,7 +28,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 #include "config.h"
 #include "avrintel.h"

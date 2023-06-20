@@ -43,7 +43,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <time.h>
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "teensy.h"
 #include "usbdevs.h"
 

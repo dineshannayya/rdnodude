@@ -43,7 +43,7 @@
 #  error "libusb needs either <usb.h> or <lusb0_usb.h>"
 #endif
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 
 #include "usbdevs.h"

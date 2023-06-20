@@ -23,7 +23,7 @@
 #include <stdlib.h>
 
 #include "ac_cfg.h"
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 
 /**

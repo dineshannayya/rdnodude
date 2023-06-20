@@ -51,7 +51,7 @@
 #include <inttypes.h>
 #include <unistd.h>
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 
 #if defined(HAVE_LIBUSB) || defined(WIN32)

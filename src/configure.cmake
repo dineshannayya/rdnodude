@@ -26,10 +26,10 @@ macro(configure_option option)
 endmacro()
 
 # Perform autoconf like multi-line configure
-file(READ riscduino_dude.conf.in CONTENTS)
+file(READ rdnodude.conf.in CONTENTS)
 configure_option(HAVE_PARPORT)
 configure_option(HAVE_LINUXSPI)
 configure_option(HAVE_LINUXGPIO)
-file(WRITE riscduino_dude.conf.in "${CONTENTS}")
+file(WRITE rdnodude.conf.in "${CONTENTS}")
 
-configure_file(riscduino_dude.conf.in riscduino_dude.conf)
+configure_file(rdnodude.conf.in rdnodude.conf)

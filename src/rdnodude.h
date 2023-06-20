@@ -23,12 +23,12 @@
 
 #include <stdio.h>
 
-#define SYSTEM_CONF_FILE "riscduino_dude.conf"
+#define SYSTEM_CONF_FILE "rdnodude.conf"
 #if defined(WIN32)
-#define USER_CONF_FILE "riscduino_dude.rc"
+#define USER_CONF_FILE "rdnodude.rc"
 #else
-#define USER_CONF_FILE ".avrduderc"
-#define XDG_USER_CONF_FILE "riscduino_dude/riscduino_dude.rc"
+#define USER_CONF_FILE ".rdnoduderc"
+#define XDG_USER_CONF_FILE "rdnodude/rdnodude.rc"
 #endif
 
 extern char *progname;       // Name of program, for messages

@@ -34,7 +34,7 @@
 #include <sys/time.h>
 #include <unistd.h>
 
-#include "riscduino_dude.h"
+#include "rdnodude.h"
 #include "libavrdude.h"
 #include "serialupdi.h"
 #include "updi_link.h"
