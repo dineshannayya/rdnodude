@@ -22,10 +22,30 @@ To install rdnodude for Linux, install the package `rdnodude` by running the fol
 sudo cmake --build build_linux --target install
 ```
 
+Standalone run command assuming hello_world.hex file
+
+```console
+rdnodude -c riscduino -U flash:w:hello_world.hex:i -b 9600 -P /dev/ttyUSB0 -p rd32d100 -v -v
+```
+
+
 ## Getting RDNODUDE for MacOS
 
 MacOS Driver is not yet planned
 
+## Fixing the access issue in ubuntu
+
+
+```console
+#find the ftdi ttyUSB* port
+dmesg | grep tty 
+
+#On Linux to access the serial port the user must be part of 2 groups dialout/tty
+sudo gpasswd --add <your user name>  dialout
+sudo gpasswd --add <your user name>  tty
+sudo chown $USER: /dev/ttyUSB2
+
+```
 
 ## Using rdnodude
 
